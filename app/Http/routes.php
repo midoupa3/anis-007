@@ -37,6 +37,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('language/{language}/edit', 'Admin\LanguageController@edit');
     Route::get('language/{language}/delete', 'Admin\LanguageController@delete');
     Route::resource('language', 'Admin\LanguageController');
+	
+	# NouveauPDV
+    Route::get('nouveaupdv/data', 'Admin\NouveauPDVController@data');
+    Route::get('nouveaupdv/{nouveaupdv}/show', 'Admin\NouveauPDVController@show');
+    Route::get('nouveaupdv/{nouveaupdv}/edit', 'Admin\NouveauPDVController@edit');
+    Route::get('nouveaupdv/{nouveaupdv}/delete', 'Admin\NouveauPDVController@delete');
+    Route::resource('nouveaupdv', 'Admin\NouveauPDVController');
 
     # Article category
     Route::get('articlecategory/data', 'Admin\ArticleCategoriesController@data');
